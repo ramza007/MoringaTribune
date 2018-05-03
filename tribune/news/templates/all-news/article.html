@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<!-- Styling -->
+<style>
+    .container{
+        background-color: white;
+        border-radius: 20px;
+        padding: 0px,50px,10px,50px;
+        opacity: 0.8;
+    }
+    
+</style>
+
+<body>
+     {%extends 'all-news/base.html'%} {% block content %}
+    
+    <div class="container">
+    
+        <div class="row">
+            <img src="{{article.article_image.url}}" class="img-responsive" alt="">
+        </div>
+    
+        <div class="row">
+            <h1 class="text-center">{{article.title}}</h1>
+        </div>
+    
+        <div class="row">
+            <p>{{article.post}}</p>
+        </div>
+    
+        <div class="row">
+            <p>Posted {{article.pub_date|timesince}} by {{article.editor.first_name}}</p>
+        </div>
+    
+    </div>
+    
+    {% endblock %}
+</body>
+</html>
